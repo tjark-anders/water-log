@@ -74,7 +74,7 @@ public class App {
         loadDailyDrinksLog();
 
         // Labels
-        currWaterLabel = new JLabel();
+        currWaterLabel = new JLabel("", SwingConstants.CENTER);
         updateCurrWater();
         updateWaterLabel();
 
