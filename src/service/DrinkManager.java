@@ -6,9 +6,8 @@ import model.DrinkOption;
 
 public class DrinkManager {
 
-    private ArrayList<DrinkOption> presetDrinkList = new ArrayList<>();
     private ArrayList<DrinkOption> dailyDrinkList = new ArrayList<>();
-    private ArrayList<DrinkOption> customDrinkList = new ArrayList<>();
+    private ArrayList<DrinkOption> drinkOptionList = new ArrayList<>();
 
     // add a selected drink to the daily drink List
     public void addDrink(DrinkOption drink) {
@@ -22,19 +21,18 @@ public class DrinkManager {
         }
     }
 
+    public void removeAllDrinks() {
+        dailyDrinkList.clear();
+    }
+
     // adds a selected drink to the custom Drink Options
-    public void addCustomDrink(DrinkOption drink) {
-        customDrinkList.add(drink);
+    public void addDrinkOption(DrinkOption drink) {
+        drinkOptionList.add(drink);
     }
 
     // removes a selected drink from the custom Drink Options
-    public void removeCustomDrink(DrinkOption drink) {
-        customDrinkList.remove(drink);
-    }
-
-    // adds a selected drink to the custom Drink Options
-    public void addPresetDrink(DrinkOption drink) {
-        presetDrinkList.add(drink);
+    public void removeDrinkOption(DrinkOption drink) {
+        drinkOptionList.remove(drink);
     }
 
     // Getter
@@ -42,11 +40,7 @@ public class DrinkManager {
         return dailyDrinkList;
     }
 
-    public ArrayList<DrinkOption> getCustomDrinks() {
-        return customDrinkList;
-    }
-
-    public ArrayList<DrinkOption> getPresetDrinks() {
-        return presetDrinkList;
+    public ArrayList<DrinkOption> getDrinkOptions() {
+        return drinkOptionList;
     }
 }

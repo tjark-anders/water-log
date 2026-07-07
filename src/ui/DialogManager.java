@@ -68,7 +68,7 @@ public class DialogManager {
             return;
         }
 
-        drinkManager.addCustomDrink(new DrinkOption(name, IconLoader.DEFAULT_ICON, size, waterP));
+        drinkManager.addDrinkOption(new DrinkOption(name, IconLoader.DEFAULT_ICON, size, waterP));
     }
 
     public boolean validate(String input, boolean isInt, int maxLength) {
