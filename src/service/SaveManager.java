@@ -120,7 +120,7 @@ public class SaveManager {
                     System.out.println("Load failed. Reason: Water% Parameter corrupted");
                     return;
                 }
-                drinkManager.addCustomDrink(new DrinkOption(name, null, size, waterP)); // fix icon
+                drinkManager.addDrinkOption(new DrinkOption(name, null, size, waterP)); // fix icon
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -132,7 +132,7 @@ public class SaveManager {
             Path path = CUSTOM_LOG;
             List<String> lines = new ArrayList<>();
 
-            for (DrinkOption drink : drinkManager.getCustomDrinks()) {
+            for (DrinkOption drink : drinkManager.getDrinkOptions()) {
                 lines.add(drink.getName() + ";" + drink.getSize() + ";" + drink.getWaterP());
             }
 
