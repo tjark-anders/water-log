@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 import model.DrinkOption;
 import service.DrinkManager;
-import util.IconLoader;
+import util.DrinkIcon;
 import util.Validator;
 
 public class DialogManager {
@@ -64,11 +64,11 @@ public class DialogManager {
         }
 
         if (quickAdd) {
-            drinkManager.addDrink(new DrinkOption(name, IconLoader.DEFAULT_ICON, size, waterP));
+            drinkManager.addDrink(new DrinkOption(name, DrinkIcon.DEFAULT_ICON, size, waterP));
             return;
         }
 
-        drinkManager.addDrinkOption(new DrinkOption(name, IconLoader.DEFAULT_ICON, size, waterP));
+        drinkManager.addDrinkOption(new DrinkOption(name, DrinkIcon.DEFAULT_ICON, size, waterP));
     }
 
     public boolean validate(String input, boolean isInt, int maxLength) {

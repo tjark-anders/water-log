@@ -11,10 +11,13 @@ public class Constants {
     public static final Color TEXT_COLOR = new Color(255, 255, 255);
 
     public static final int DRINK_BUTTON_SIZE = 120;
-    public static final Dimension FUN_BUTTON_SIZE = new Dimension(150, 30);
+    public static final Dimension SELECTION_BUTTON_SIZE = new Dimension(150, 30);
+    public static final Dimension HISTORY_BUTTON_SIZE = new Dimension(150, 30);
     public static final int ICON_SIZE = 50;
 
     public static final int WIN_WIDTH = 1200;
     public static final int WIN_HEIGHT = 800;
+
+    public static final int BORDER_SPACE = 20;
 
 }

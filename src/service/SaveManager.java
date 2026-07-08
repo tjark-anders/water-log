@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.DrinkOption;
+import util.DrinkIcon;
+import util.IconLoader;
 import util.Validator;
 
 public class SaveManager {
@@ -20,7 +22,7 @@ public class SaveManager {
 
     private final Path BASE_PATH = Path.of(System.getProperty("user.home"), "saves", "WaterLog");
     private final Path DAILY_LOG = BASE_PATH.resolve("DailyDrinksLog.txt");
-    private final Path CUSTOM_LOG = BASE_PATH.resolve("CustomDrinkOptions.txt");
+    private final Path CUSTOM_LOG = BASE_PATH.resolve("DrinkOptions.txt");
 
     public void loadDailyDrinksLog() {
         Path path = DAILY_LOG;
@@ -96,7 +98,7 @@ public class SaveManager {
         }
     }
 
-    public void loadCustomDrinkOptions() {
+    public void loadDrinkOptions() {
         Path path = CUSTOM_LOG;
         try {
             List<String> lines = Files.readAllLines(path);
@@ -120,20 +122,22 @@ public class SaveManager {
                     System.out.println("Load failed. Reason: Water% Parameter corrupted");
                     return;
                 }
-                drinkManager.addDrinkOption(new DrinkOption(name, null, size, waterP)); // fix icon
+                DrinkIcon icon = DrinkIcon.valueOf(lineElements[3]); // Prüfung?
+
+                drinkManager.addDrinkOption(new DrinkOption(name, icon, size, waterP)); // fix icon
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void saveCustomDrinkOptions() {
+    public void saveDrinkOptions() {
         try {
             Path path = CUSTOM_LOG;
             List<String> lines = new ArrayList<>();
 
             for (DrinkOption drink : drinkManager.getDrinkOptions()) {
-                lines.add(drink.getName() + ";" + drink.getSize() + ";" + drink.getWaterP());
+                lines.add(drink.getName() + ";" + drink.getSize() + ";" + drink.getWaterP() + ";" + drink.getIcon());
             }
 
             Files.write(path, lines);
