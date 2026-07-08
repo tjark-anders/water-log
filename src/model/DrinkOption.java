@@ -1,14 +1,14 @@
 package model;
 
-import javax.swing.ImageIcon;
+import util.DrinkIcon;
 
 public class DrinkOption {
     private String name;
     private int size;
     private int waterP;
-    private ImageIcon icon;
+    private DrinkIcon icon;
 
-    public DrinkOption(String name, ImageIcon icon, int size, int waterP) {
+    public DrinkOption(String name, DrinkIcon icon, int size, int waterP) {
         this.name = name;
         this.size = size;
         this.waterP = waterP;
@@ -39,11 +39,11 @@ public class DrinkOption {
         this.waterP = waterP;
     }
 
-    public ImageIcon getIcon() {
+    public DrinkIcon getIcon() {
         return icon;
     }
 
-    public void setIcon(ImageIcon icon) {
+    public void setIcon(DrinkIcon icon) {
         this.icon = icon;
     }
 }
