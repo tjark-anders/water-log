@@ -15,91 +15,119 @@ public class DialogManager {
         this.drinkManager = drinkManager;
     }
 
+    public void showEditDrinkEntrysDialog(DrinkOption drink) {
+        String name = drink.getName();
+        int size = drink.getSize();
+        int waterP = drink.getWaterP();
+
+        // Name
+        name = showWordDialog(name, "Name: ");
+        if (name.equals(null)) {
+            return;
+        }
+        drink.setName(name);
+
+        // size
+        size = showNumberDialog(size, "Größe: ");
+        if (size == 0) {
+            return;
+        }
+        drink.setSize(size);
+
+        // WaterP
+        waterP = showNumberDialog(waterP, "WaterP: ");
+        if (waterP == 0) {
+            return;
+        }
+        drink.setWaterP(waterP);
+    }
+
+    public void showEditDrinkOptionDialog(DrinkOption drink) {
+        String name = drink.getName();
+        int waterP = drink.getWaterP();
+
+        // Name
+        name = showWordDialog(name, "Name: ");
+        if (name.equals(null)) {
+            return;
+        }
+        drink.setName(name);
+
+        // Water
+        waterP = showNumberDialog(waterP, "WaterP: ");
+        if (waterP == 0) {
+            return;
+        }
+        drink.setWaterP(waterP);
+    }
+
     public void showCreateDrinkMenu(boolean quickAdd) {
 
         String name = "";
-        int size = 0;
         int waterP = 0;
 
-        // Name
-        while (true) {
-            String input = JOptionPane.showInputDialog(null, "Name: ");
-
-            if (input == null)
-                return;
-
-            if (!validate(input, false, 15)) {
-                continue;
-            }
-            name = input;
-            break;
-        }
-
-        // Size
-        while (true) {
-            String input = JOptionPane.showInputDialog(null, "Size: ");
-
-            if (input == null)
-                return;
-
-            if (!validate(input, true, 15)) {
-                continue;
-            }
-            size = Integer.parseInt(input);
-            break;
-        }
-
-        // WaterP
-        while (true) {
-            String input = JOptionPane.showInputDialog(null, "Water%: ");
-
-            if (input == null)
-                return;
-
-            if (!validate(input, true, 15)) {
-                continue;
-            }
-            waterP = Integer.parseInt(input);
-            break;
-        }
-
-        if (quickAdd) {
-            drinkManager.addDrink(new DrinkOption(name, DrinkIcon.DEFAULT_ICON, size, waterP));
+        name = showWordDialog(name, "Name: ");
+        if (name.equals(null)) {
             return;
         }
 
-        drinkManager.addDrinkOption(new DrinkOption(name, DrinkIcon.DEFAULT_ICON, size, waterP));
+        waterP = showNumberDialog(waterP, "Water%: ");
+        if (waterP == 0) {
+            return;
+        }
+
+        if (quickAdd) {
+            drinkManager.addDrinkEntry(new DrinkOption(name, DrinkIcon.DEFAULT_ICON, 0, waterP));
+        } else {
+            drinkManager.addDrinkOption(new DrinkOption(name, DrinkIcon.DEFAULT_ICON, 0, waterP));
+        }
     }
 
-    public boolean validate(String input, boolean isInt, int maxLength) {
+    // --------------------- helper ---------------------------
 
-        if (input.length() > maxLength) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Eingabe ist zu lang",
-                    null,
-                    JOptionPane.INFORMATION_MESSAGE);
-            return false;
+    public String showWordDialog(String word, String text) {
+        while (true) {
+            String input = JOptionPane.showInputDialog(null, text, word);
+
+            if (input == null)
+                return null;
+
+            String err = Validator.validateString(input, 20);
+
+            if (!err.equals("")) {
+                JOptionPane.showMessageDialog(
+                        null,
+                        err,
+                        "Eingabefehler",
+                        JOptionPane.INFORMATION_MESSAGE);
+                continue;
+            }
+            word = input;
+            return word;
         }
-
-        if (input.isEmpty()) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Eingabe darf nicht leer sein",
-                    null,
-                    JOptionPane.INFORMATION_MESSAGE);
-            return false;
-        }
-
-        if (isInt && !Validator.isInteger(input)) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Eingabe muss eine Zahl sein",
-                    null,
-                    JOptionPane.INFORMATION_MESSAGE);
-            return false;
-        }
-
-        return true;
     }
+
+    public int showNumberDialog(int number, String text) {
+        while (true) {
+            String input = JOptionPane.showInputDialog(null, text, number);
+
+            if (input == null)
+                return 0;
+
+            String err = Validator.validateInt(input, 1, 1000);
+
+            if (!err.equals("")) {
+                JOptionPane.showMessageDialog(
+                        null,
+                        err,
+                        "Eingabefehler",
+                        JOptionPane.INFORMATION_MESSAGE);
+                continue;
+            }
+
+            number = Integer.parseInt(input);
+            return number;
+        }
+    }
+
 }

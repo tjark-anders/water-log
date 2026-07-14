@@ -6,38 +6,38 @@ import model.DrinkOption;
 
 public class DrinkManager {
 
-    private ArrayList<DrinkOption> dailyDrinkList = new ArrayList<>();
+    private ArrayList<DrinkOption> drinkEntryList = new ArrayList<>();
     private ArrayList<DrinkOption> drinkOptionList = new ArrayList<>();
 
-    // add a selected drink to the daily drink List
-    public void addDrink(DrinkOption drink) {
-        dailyDrinkList.add(drink);
+    public void addDrinkEntry(DrinkOption drink) {
+        drinkEntryList.add(drink);
     }
 
-    // remove the last added drink from the drink List
-    public void removeLastDrink() {
-        if (dailyDrinkList.size() > 0) {
-            dailyDrinkList.remove(dailyDrinkList.size() - 1);
+    public void removeLastDrinkEntry() {
+        if (drinkEntryList.size() > 0) {
+            drinkEntryList.remove(drinkEntryList.size() - 1);
         }
     }
 
-    public void removeAllDrinks() {
-        dailyDrinkList.clear();
+    public void removeDrinkEntry(DrinkOption drink) {
+        drinkEntryList.remove(drink);
     }
 
-    // adds a selected drink to the custom Drink Options
+    public void removeAllDrinkEntrys() {
+        drinkEntryList.clear();
+    }
+
     public void addDrinkOption(DrinkOption drink) {
         drinkOptionList.add(drink);
     }
 
-    // removes a selected drink from the custom Drink Options
     public void removeDrinkOption(DrinkOption drink) {
         drinkOptionList.remove(drink);
     }
 
     // Getter
-    public ArrayList<DrinkOption> getDailyDrinks() {
-        return dailyDrinkList;
+    public ArrayList<DrinkOption> getDrinkEntrys() {
+        return drinkEntryList;
     }
 
     public ArrayList<DrinkOption> getDrinkOptions() {

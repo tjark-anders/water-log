@@ -5,6 +5,7 @@ import service.SaveManager;
 import service.WaterCalculator;
 import ui.DialogManager;
 import ui.MainWindow;
+import util.IconLoader;
 
 public class App {
 
@@ -15,14 +16,8 @@ public class App {
         WaterCalculator waterCalculator = new WaterCalculator(drinkManager);
         DialogManager dialogManager = new DialogManager(drinkManager);
 
-        Files.createDirectories(saveManager.getBasePath());
-
-        if (!Files.exists(saveManager.getDailyLogPath())) {
-            Files.createFile(saveManager.getDailyLogPath());
-        }
-        if (!Files.exists(saveManager.getCustomLogPath())) {
-            Files.createFile(saveManager.getCustomLogPath());
-        }
+        saveManager.createSaveFiles();
+        IconLoader.loadDrinkIcons();
 
         new MainWindow(drinkManager, saveManager, waterCalculator, dialogManager);
     }

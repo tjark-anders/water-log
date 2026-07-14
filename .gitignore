@@ -1,16 +1,5 @@
 # Compiled classes
 /bin/
 
-# Eclipse
-.project
-.classpath
-.settings/
-
 # VS Code
 .vscode/
-
-# macOS
-.DS_Store
-
-# Windows
-Thumbs.db
