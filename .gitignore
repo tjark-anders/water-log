@@ -1,5 +1,4 @@
-# Compiled classes
-/bin/
-
-# VS Code
-.vscode/
+.gradle/
+build/
+app/build/
+release/

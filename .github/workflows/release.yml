@@ -1,0 +1,80 @@
+name: Build Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            type: app-image
+            ext: zip
+
+          - os: ubuntu-latest
+            type: app-image
+            ext: tar.gz
+
+          - os: macos-latest
+            type: app-image
+            ext: zip
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build
+        run: ./gradlew installDist
+        shell: bash
+
+      - name: Package
+        shell: bash
+        run: |
+          mkdir release
+
+          jpackage \
+            --type ${{ matrix.type }} \
+            --name "Water Log" \
+            --input app/build/install/app/lib \
+            --main-jar app.jar \
+            --main-class de.tjark.waterlog.App \
+            --app-version ${{ github.ref_name }} \
+            --vendor "Anders Digital Studio" \
+            --dest release
+
+      - name: Zip Windows/macOS
+        if: matrix.ext == 'zip'
+        uses: thedoctor0/zip-release@0.7.6
+        with:
+          directory: release
+          filename: WaterLog-${{ runner.os }}.zip
+
+      - name: Tar Linux
+        if: matrix.ext == 'tar.gz'
+        run: |
+          cd release
+          tar -czf WaterLog-Linux.tar.gz *
+
+      - name: Upload Windows/macOS
+        if: matrix.ext == 'zip'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.zip
+
+      - name: Upload Linux
+        if: matrix.ext == 'tar.gz'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.tar.gz
