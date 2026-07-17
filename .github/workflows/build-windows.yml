@@ -1,0 +1,45 @@
+name: Build Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 23
+
+      - name: Make Gradle executable
+        run: chmod +x gradlew
+        shell: bash
+
+      - name: Build
+        run: ./gradlew installDist
+        shell: bash
+
+      - name: Package
+        run: |
+          jpackage ^
+            --type app-image ^
+            --name "Water Log" ^
+            --input app\build\install\app\lib ^
+            --main-jar app.jar ^
+            --main-class de.tjark.waterlog.App ^
+            --icon app\src\main\resources\img\app_icon.ico ^
+            --app-version 1.0.0 ^
+            --vendor "Anders Digital Studio" ^
+            --dest release
+        shell: cmd
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Water Log Windows
+          path: release
