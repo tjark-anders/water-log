@@ -1,0 +1,40 @@
+name: Build macOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 23
+
+      - name: Build
+        run: ./gradlew installDist
+
+      - name: Package
+        run: |
+          mkdir release
+
+          jpackage \
+            --type app-image \
+            --name "Water Log" \
+            --input app/build/install/app/lib \
+            --main-jar app.jar \
+            --main-class de.tjark.waterlog.App \
+            --app-version 1.0.0 \
+            --vendor "Anders Digital Studio" \
+            --dest release
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Water Log macOS
+          path: release
