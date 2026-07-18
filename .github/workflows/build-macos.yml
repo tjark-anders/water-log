@@ -36,8 +36,13 @@ jobs:
             --vendor "Anders Digital Studio" \
             --dest release
 
+      - name: Create macOS ZIP
+        run: |
+          cd release
+          ditto -c -k --sequesterRsrc --keepParent "Water Log.app" WaterLog-macOS.zip
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Water Log macOS
-          path: release
+          name: WaterLog-macOS
+          path: release/WaterLog-macOS.zip
