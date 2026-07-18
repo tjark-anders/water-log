@@ -23,7 +23,9 @@ Create your own drinks, define their water percentage, and keep track of your hy
 
 ## Download
 
-Download the latest version from the Releases page.
+## Download
+
+Download the latest version from the **[Releases](../../releases)** page.
 
 ---
 
