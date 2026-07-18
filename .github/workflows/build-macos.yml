@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+ build:
     runs-on: macos-latest
 
     steps:
@@ -36,7 +36,20 @@ jobs:
             --vendor "Anders Digital Studio" \
             --dest release
 
-      - name: Create macOS ZIP
+      - name: Inspect app bundle
+        run: |
+          echo "===== Contents ====="
+          find "release/Water Log.app/Contents" -maxdepth 2
+
+          echo ""
+          echo "===== Contents/app ====="
+          ls -la "release/Water Log.app/Contents/app"
+
+      - name: Verify app
+        run: |
+          codesign --verify --deep --verbose=4 "release/Water Log.app" || true
+
+      - name: Create ZIP
         run: |
           cd release
           ditto -c -k --sequesterRsrc --keepParent "Water Log.app" WaterLog-macOS.zip
