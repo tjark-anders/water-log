@@ -23,8 +23,6 @@ Create your own drinks, define their water percentage, and keep track of your hy
 
 ## Download
 
-## Download
-
 Download the latest version from the **[Releases](../../releases)** page.
 
 ---
@@ -41,7 +39,7 @@ No Java installation is required.
 
 ## Built With
 
-- Java 21
+- Java 23
 - Swing
 - Gradle
 - jpackage
