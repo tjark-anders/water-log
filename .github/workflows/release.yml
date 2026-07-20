@@ -72,12 +72,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y fakeroot dpkg-dev
 
-      - name: Show install directory
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          Get-ChildItem app/build/install -Recurse
-
       - name: Package Windows
         if: runner.os == 'Windows'
         shell: pwsh
@@ -85,7 +79,7 @@ jobs:
           jpackage `
             --type msi `
             --name "${{ env.APP_NAME }}" `
-            --input app/build/install/app/lib `
+            --input "app/build/install/Water Log/lib" `
             --main-jar app.jar `
             --main-class "${{ env.APP_MAIN_CLASS }}" `
             --icon jpackage/icon.ico `
@@ -100,20 +94,13 @@ jobs:
           Get-ChildItem release -Filter *.msi |
           Rename-Item -NewName "WaterLog-$env:VERSION-Windows.msi"
 
-
-      - name: Show install directory
-        if: runner.os != 'Windows'
-        run: |
-          pwd
-          ls -R app/build/install
-
       - name: Package Linux
         if: runner.os == 'Linux'
         run: |
           jpackage \
             --type deb \
             --name "${APP_NAME}" \
-            --input app/build/install/app/lib \
+            --input "app/build/install/Water Log/lib" \
             --main-jar app.jar \
             --main-class "${APP_MAIN_CLASS}" \
             --icon jpackage/icon.png \
@@ -126,19 +113,13 @@ jobs:
         run: |
           mv release/*.deb release/WaterLog-${VERSION}-Linux.deb
 
-      - name: Show install directory
-        if: runner.os != 'Windows'
-        run: |
-          pwd
-          ls -R app/build/install
-
       - name: Package macOS
         if: runner.os == 'macOS'
         run: |
           jpackage \
             --type dmg \
             --name "${APP_NAME}" \
-            --input app/build/install/app/lib \
+            --input "app/build/install/Water Log/lib" \
             --main-jar app.jar \
             --main-class "${APP_MAIN_CLASS}" \
             --icon jpackage/icon.icns \
