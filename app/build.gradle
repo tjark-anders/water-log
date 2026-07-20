@@ -10,6 +10,9 @@ plugins {
     id 'application'
 }
 
+group = "de.tjark"
+version = "0.0.0"
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -38,3 +41,5 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+

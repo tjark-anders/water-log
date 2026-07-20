@@ -1,80 +1,66 @@
-name: Build Release
+name: Release
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
 
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         include:
           - os: windows-latest
-            type: app-image
-            ext: zip
+            archive: zip
 
           - os: ubuntu-latest
-            type: app-image
-            ext: tar.gz
+            archive: tar
 
           - os: macos-latest
-            type: app-image
-            ext: zip
+            archive: tar
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Install Java
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 23
+          cache: gradle
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+      - name: Make Gradle executable
+        if: runner.os != 'Windows'
+        run: chmod +x gradlew
 
-      - name: Build
-        run: ./gradlew installDist
-        shell: bash
+      - name: Build application
+        run: ./gradlew :app:installDist
 
-      - name: Package
-        shell: bash
+      - name: Package ZIP (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
         run: |
-          mkdir release
+          Compress-Archive `
+            -Path app/build/install/app/* `
+            -DestinationPath WaterLog-Windows.zip
 
-          jpackage \
-            --type ${{ matrix.type }} \
-            --name "Water Log" \
-            --input app/build/install/app/lib \
-            --main-jar app.jar \
-            --main-class de.tjark.waterlog.App \
-            --app-version ${{ github.ref_name }} \
-            --vendor "Anders Digital Studio" \
-            --dest release
-
-      - name: Zip Windows/macOS
-        if: matrix.ext == 'zip'
-        uses: thedoctor0/zip-release@0.7.6
-        with:
-          directory: release
-          filename: WaterLog-${{ runner.os }}.zip
-
-      - name: Tar Linux
-        if: matrix.ext == 'tar.gz'
+      - name: Package TAR (Linux/macOS)
+        if: runner.os != 'Windows'
         run: |
-          cd release
-          tar -czf WaterLog-Linux.tar.gz *
+          tar -czf WaterLog-${{ runner.os }}.tar.gz \
+          -C app/build/install app
 
-      - name: Upload Windows/macOS
-        if: matrix.ext == 'zip'
+      - name: Upload Release Asset
         uses: softprops/action-gh-release@v2
         with:
-          files: release/*.zip
-
-      - name: Upload Linux
-        if: matrix.ext == 'tar.gz'
-        uses: softprops/action-gh-release@v2
-        with:
-          files: release/*.tar.gz
+          files: |
+            WaterLog-Windows.zip
+            WaterLog-Linux.tar.gz
+            WaterLog-macOS.tar.gz
