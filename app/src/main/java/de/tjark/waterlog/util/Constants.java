@@ -20,8 +20,8 @@ public class Constants {
     public static final int LARGE_ICON_SIZE = 50;
     public static final int SMALL_ICON_SIZE = 30;
 
-    public static final int WIN_WIDTH = 1200;
-    public static final int WIN_HEIGHT = 800;
+    public static final int WIN_WIDTH = 1220;
+    public static final int WIN_HEIGHT = 750;
 
     public static final int BORDER_SPACE = 20;
 

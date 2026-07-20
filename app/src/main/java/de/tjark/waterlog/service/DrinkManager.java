@@ -36,11 +36,15 @@ public class DrinkManager {
     }
 
     // Getter
-    public ArrayList<DrinkOption> getDrinkEntrys() {
+    public ArrayList<DrinkOption> getAllDrinkEntrys() {
         return drinkEntryList;
     }
 
-    public ArrayList<DrinkOption> getDrinkOptions() {
+    public ArrayList<DrinkOption> getAllDrinkOptions() {
         return drinkOptionList;
+    }
+
+    public DrinkOption getDrinkEntry(int index) {
+        return drinkEntryList.get(index);
     }
 }

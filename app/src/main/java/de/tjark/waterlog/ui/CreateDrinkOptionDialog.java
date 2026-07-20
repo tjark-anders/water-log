@@ -2,6 +2,7 @@ package de.tjark.waterlog.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -51,6 +52,10 @@ public class CreateDrinkOptionDialog extends JDialog {
     private JTextField sizeTextField;
     private JTextField waterPTextField;
 
+    GridBagConstraints gbc;
+    Insets normalInsets;
+    Insets errorInsets;
+
     DrinkManager drinkManager;
     private boolean isQuickEntry;
     private boolean isEditMode = false;
@@ -70,8 +75,8 @@ public class CreateDrinkOptionDialog extends JDialog {
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.Y_AXIS));
         JPanel gridPanel = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        iconScrollPanel = new JPanel(new WrapLayout());
+        gbc = new GridBagConstraints();
+        iconScrollPanel = new JPanel(new WrapLayout(FlowLayout.LEFT));
         JPanel optionPanel = new JPanel(new FlowLayout());
 
         panelList.add(inputPanel);
@@ -93,21 +98,26 @@ public class CreateDrinkOptionDialog extends JDialog {
 
         // Labels
         nameLabel = new JLabel("Name:");
-        nameErrorLabel = new JLabel("");
+        nameErrorLabel = new JLabel(" ");
         if (isQuickEntry) {
             sizeLabel = new JLabel("Größe (ml) :");
-            sizeErrorLabel = new JLabel("");
+            sizeErrorLabel = new JLabel(" ");
             labelList.add(sizeLabel);
             labelErrList.add(sizeErrorLabel);
+            sizeErrorLabel.setHorizontalAlignment(JLabel.RIGHT);
+
         }
         waterPLabel = new JLabel("Wasser (%):");
-        waterPErrorLabel = new JLabel("");
+        waterPErrorLabel = new JLabel(" ");
 
         labelList.add(nameLabel);
         labelList.add(waterPLabel);
 
         labelErrList.add(nameErrorLabel);
         labelErrList.add(waterPErrorLabel);
+
+        nameErrorLabel.setHorizontalAlignment(JLabel.RIGHT);
+        waterPErrorLabel.setHorizontalAlignment(JLabel.RIGHT);
 
         // Buttons
         JButton cancelButton = new JButton("Abbrechen");
@@ -132,36 +142,36 @@ public class CreateDrinkOptionDialog extends JDialog {
         inputPanel.add(gridPanel);
         inputPanel.add(iconScrollPane);
 
-        Insets normalInsets = new Insets(10, 10, 10, 10);
-        Insets errorInsets = new Insets(0, 0, 0, 0);
+        normalInsets = new Insets(10, 10, 10, 10);
+        errorInsets = new Insets(0, 0, 0, 0);
 
-        setGbcLabel(gbc, 0, 0, normalInsets);
+        setGbcLabel(0, 0);
         gridPanel.add(nameLabel, gbc);
 
-        setGbcTextfield(gbc, 1, 0, normalInsets);
+        setGbcTextfield(1, 0);
         gridPanel.add(nameTextField, gbc);
 
-        setGbcLabel(gbc, 0, 1, errorInsets);
+        setGbcErrLabel(0, 1);
         gridPanel.add(nameErrorLabel, gbc);
 
         if (isQuickEntry) {
-            setGbcLabel(gbc, 0, 2, normalInsets);
+            setGbcLabel(0, 2);
             gridPanel.add(sizeLabel, gbc);
 
-            setGbcTextfield(gbc, 1, 2, normalInsets);
+            setGbcTextfield(1, 2);
             gridPanel.add(sizeTextField, gbc);
 
-            setGbcLabel(gbc, 0, 3, errorInsets);
+            setGbcErrLabel(0, 3);
             gridPanel.add(sizeErrorLabel, gbc);
         }
 
-        setGbcLabel(gbc, 0, 4, normalInsets);
+        setGbcLabel(0, 4);
         gridPanel.add(waterPLabel, gbc);
 
-        setGbcTextfield(gbc, 1, 4, normalInsets);
+        setGbcTextfield(1, 4);
         gridPanel.add(waterPTextField, gbc);
 
-        setGbcLabel(gbc, 0, 5, errorInsets);
+        setGbcErrLabel(0, 5);
         gridPanel.add(waterPErrorLabel, gbc);
 
         optionPanel.add(cancelButton);
@@ -180,7 +190,7 @@ public class CreateDrinkOptionDialog extends JDialog {
 
         for (JLabel label : labelErrList) {
             label.setForeground(Color.RED);
-            label.setFont(new Font("", 1, 10));
+            label.setFont(new Font("", 1, 12));
         }
 
         for (JButton button : buttonList) {
@@ -303,20 +313,34 @@ public class CreateDrinkOptionDialog extends JDialog {
         }
     }
 
-    private void setGbcLabel(GridBagConstraints gbc, int x, int y, Insets insets) {
+    private void setGbcLabel(int x, int y) {
 
-        gbc.insets = insets;
+        gbc.insets = normalInsets;
         gbc.gridx = x;
         gbc.gridy = y;
+        gbc.gridwidth = 1;
         gbc.weightx = 0;
         gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.WEST;
     }
 
-    private void setGbcTextfield(GridBagConstraints gbc, int x, int y, Insets insets) {
+    private void setGbcErrLabel(int x, int y) {
 
-        gbc.insets = insets;
+        gbc.insets = errorInsets;
         gbc.gridx = x;
         gbc.gridy = y;
+        gbc.gridwidth = 2;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.anchor = GridBagConstraints.EAST;
+    }
+
+    private void setGbcTextfield(int x, int y) {
+
+        gbc.insets = normalInsets;
+        gbc.gridx = x;
+        gbc.gridy = y;
+        gbc.gridwidth = 1;
         gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
     }

@@ -1,9 +1,5 @@
 Bugfixes & minifeatures
-- waterentrys wie stack sortieren 
-- waterOptions und Icons von links nach rechts ausrichten
-- befehl zu readme datei hinzufügen
 - error meldungen nicht die ui verschieben lassen
-- grundgetränke reduzieren
 - erweiterte grundgetränke datei zum download anbieten
 
 Features

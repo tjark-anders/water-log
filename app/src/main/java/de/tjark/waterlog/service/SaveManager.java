@@ -97,7 +97,7 @@ public class SaveManager {
             }
 
             newLines.add(">" + LocalDate.now());
-            for (DrinkOption drink : drinkManager.getDrinkEntrys()) {
+            for (DrinkOption drink : drinkManager.getAllDrinkEntrys()) {
                 newLines.add(drink.getName() + ";" + drink.getSize() + ";" + drink.getWaterP() + ";" + drink.getIcon());
             }
             newLines.add("");
@@ -169,7 +169,7 @@ public class SaveManager {
             Path path = DRINK_OPTIONS_PATH;
             List<String> lines = new ArrayList<>();
 
-            for (DrinkOption drink : drinkManager.getDrinkOptions()) {
+            for (DrinkOption drink : drinkManager.getAllDrinkOptions()) {
                 lines.add(drink.getName() + ";" + drink.getSize() + ";" + drink.getWaterP() + ";" + drink.getIcon());
             }
 

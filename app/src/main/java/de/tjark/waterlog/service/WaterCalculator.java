@@ -12,7 +12,7 @@ public class WaterCalculator {
 
     public int getCurrWater() {
         int currWater = 0;
-        for (DrinkOption daylyDrink : drinkManager.getDrinkEntrys()) {
+        for (DrinkOption daylyDrink : drinkManager.getAllDrinkEntrys()) {
             currWater += daylyDrink.getSize() / 100.0 * daylyDrink.getWaterP();
         }
         return currWater;
