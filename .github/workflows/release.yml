@@ -139,19 +139,19 @@ jobs:
           name: ${{ runner.os }}
           path: release/*
 
-  # release:
+  release:
 
-  #   needs: build
+    needs: build
 
-  #   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  #   steps:
+    steps:
 
-  #     - uses: actions/download-artifact@v4
-  #       with:
-  #         path: artifacts
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
 
-  #     - name: Create GitHub Release
-  #       uses: softprops/action-gh-release@v2
-  #       with:
-  #         files: artifacts/**/*
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/**/*
