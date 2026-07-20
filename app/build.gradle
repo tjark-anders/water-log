@@ -6,12 +6,11 @@
  */
 
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
 
 group = "de.tjark"
-version = "0.0.0"
+version = "1.0.1"
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -35,11 +34,15 @@ java {
 
 application {
     mainClass = 'de.tjark.waterlog.App'
+    applicationName = 'Water Log'
 }
+
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+
 
 

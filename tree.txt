@@ -1,0 +1,930 @@
+Auflistung der Ordnerpfade
+Volumeseriennummer : D276-92DE
+D:.
+³   .gitattributes
+³   .gitignore
+³   gradle.properties
+³   gradlew
+³   gradlew.bat
+³   README.md
+³   settings.gradle
+³   todo.md
+³   tree.txt
+³   
+ÃÄÄÄ.github
+³   ÃÄÄÄmodernize
+³   ³   ÀÄÄÄjava-upgrade
+³   ³       ³   .gitignore
+³   ³       ³   
+³   ³       ÀÄÄÄhooks
+³   ³           ÀÄÄÄscripts
+³   ³                   recordToolUse.ps1
+³   ³                   recordToolUse.sh
+³   ³                   
+³   ÀÄÄÄworkflows
+³           release.yml
+³           
+ÃÄÄÄ.gradle
+³   ³   file-system.probe
+³   ³   
+³   ÃÄÄÄ9.6.1
+³   ³   ³   gc.properties
+³   ³   ³   
+³   ³   ÃÄÄÄchecksums
+³   ³   ³       checksums.lock
+³   ³   ³       md5-checksums.bin
+³   ³   ³       sha1-checksums.bin
+³   ³   ³       
+³   ³   ÃÄÄÄexecutionHistory
+³   ³   ³       executionHistory.bin
+³   ³   ³       executionHistory.lock
+³   ³   ³       
+³   ³   ÃÄÄÄexpanded
+³   ³   ÃÄÄÄfileChanges
+³   ³   ³       last-build.bin
+³   ³   ³       
+³   ³   ÃÄÄÄfileHashes
+³   ³   ³       fileHashes.bin
+³   ³   ³       fileHashes.lock
+³   ³   ³       resourceHashesCache.bin
+³   ³   ³       
+³   ³   ÀÄÄÄvcsMetadata
+³   ÃÄÄÄbuildOutputCleanup
+³   ³       buildOutputCleanup.lock
+³   ³       cache.properties
+³   ³       outputFiles.bin
+³   ³       
+³   ÃÄÄÄconfiguration-cache
+³   ³   ³   configuration-cache.lock
+³   ³   ³   gc.properties
+³   ³   ³   
+³   ³   ÃÄÄÄ124f601f-f437-4b45-8e0b-57131dee095c
+³   ³   ³       .globals.work.bin
+³   ³   ³       .strings.work.bin
+³   ³   ³       build.work.bin
+³   ³   ³       buildfingerprint.bin
+³   ³   ³       classloaderscopes.bin
+³   ³   ³       entry.bin
+³   ³   ³       projectfingerprint.bin
+³   ³   ³       work.bin
+³   ³   ³       _app.work.bin
+³   ³   ³       
+³   ³   ÃÄÄÄ4f87d724-ee3a-41d2-8bb5-3f40cd1accc7
+³   ³   ³       .globals.work.bin
+³   ³   ³       .strings.work.bin
+³   ³   ³       buildfingerprint.bin
+³   ³   ³       classloaderscopes.bin
+³   ³   ³       entry.bin
+³   ³   ³       projectfingerprint.bin
+³   ³   ³       work.bin
+³   ³   ³       _app.work.bin
+³   ³   ³       
+³   ³   ÃÄÄÄ64f79aa5-7afa-4f35-90a3-3cf50f6d53cd
+³   ³   ³       .globals.work.bin
+³   ³   ³       .strings.work.bin
+³   ³   ³       build.work.bin
+³   ³   ³       buildfingerprint.bin
+³   ³   ³       classloaderscopes.bin
+³   ³   ³       entry.bin
+³   ³   ³       projectfingerprint.bin
+³   ³   ³       work.bin
+³   ³   ³       _app.work.bin
+³   ³   ³       
+³   ³   ÃÄÄÄ6biur1eff3yx3vxja3002pbpo
+³   ³   ³       candidates.bin
+³   ³   ³       
+³   ³   ÃÄÄÄ6zfgphrcistvppir42robml13
+³   ³   ³       candidates.bin
+³   ³   ³       
+³   ³   ÃÄÄÄ738559d8-1744-48a5-9ac3-36fdd10201d8
+³   ³   ³       classloaderscopes8833213256783467719.tmp
+³   ³   ³       
+³   ³   ÃÄÄÄ7lsxewf7b7q64ulyplxsady37
+³   ³   ³       candidates.bin
+³   ³   ³       
+³   ³   ÃÄÄÄ957196af-d81c-45c7-b5bc-d81c28457161
+³   ³   ³       .globals.work.bin
+³   ³   ³       .strings.work.bin
+³   ³   ³       buildfingerprint.bin
+³   ³   ³       classloaderscopes.bin
+³   ³   ³       entry.bin
+³   ³   ³       projectfingerprint.bin
+³   ³   ³       work.bin
+³   ³   ³       _app.work.bin
+³   ³   ³       
+³   ³   ÃÄÄÄas6tcavzctl47t04ua140ixma
+³   ³   ³       candidates.bin
+³   ³   ³       
+³   ³   ÃÄÄÄb88d3891-8776-4ac9-a571-d60dc652a553
+³   ³   ³       .globals.work.bin
+³   ³   ³       .strings.work.bin
+³   ³   ³       buildfingerprint.bin
+³   ³   ³       classloaderscopes.bin
+³   ³   ³       entry.bin
+³   ³   ³       projectfingerprint.bin
+³   ³   ³       work.bin
+³   ³   ³       _app.work.bin
+³   ³   ³       
+³   ³   ÃÄÄÄcnhl2wpzxblejkod27rxqt5a5
+³   ³   ÃÄÄÄda55e2a5-f5a4-4b4d-ac4f-4245566f4275
+³   ³   ³       .globals.work.bin
+³   ³   ³       .strings.work.bin
+³   ³   ³       buildfingerprint.bin
+³   ³   ³       classloaderscopes.bin
+³   ³   ³       entry.bin
+³   ³   ³       projectfingerprint.bin
+³   ³   ³       work.bin
+³   ³   ³       _app.work.bin
+³   ³   ³       
+³   ³   ÃÄÄÄdvxgvamnmw5vdfwlkjo5mn3qy
+³   ³   ³       candidates.bin
+³   ³   ³       
+³   ³   ÃÄÄÄe47e87ec-5caa-42b1-930b-ade58c8f47ac
+³   ³   ³       .globals.work.bin
+³   ³   ³       .strings.work.bin
+³   ³   ³       classloaderscopes14495950379251602531.tmp
+³   ³   ³       work.bin
+³   ³   ³       _app.work.bin
+³   ³   ³       
+³   ³   ÀÄÄÄho16wz5i1083cxkvtzo5273z
+³   ³           candidates.bin
+³   ³           
+³   ÀÄÄÄvcs-1
+³           gc.properties
+³           
+ÃÄÄÄ.vscode
+³       settings.json
+³       
+ÃÄÄÄapp
+³   ³   build.gradle
+³   ³   
+³   ÃÄÄÄbin
+³   ³   ÃÄÄÄmain
+³   ³   ³   ÃÄÄÄde
+³   ³   ³   ³   ÀÄÄÄtjark
+³   ³   ³   ³       ÀÄÄÄwaterlog
+³   ³   ³   ³           ³   App.class
+³   ³   ³   ³           ³   
+³   ³   ³   ³           ÃÄÄÄlayout
+³   ³   ³   ³           ³       WrapLayout.class
+³   ³   ³   ³           ³       
+³   ³   ³   ³           ÃÄÄÄmodel
+³   ³   ³   ³           ³       DrinkOption.class
+³   ³   ³   ³           ³       
+³   ³   ³   ³           ÃÄÄÄservice
+³   ³   ³   ³           ³       DrinkManager.class
+³   ³   ³   ³           ³       SaveManager.class
+³   ³   ³   ³           ³       WaterCalculator.class
+³   ³   ³   ³           ³       
+³   ³   ³   ³           ÃÄÄÄui
+³   ³   ³   ³           ³       CreateDrinkOptionDialog.class
+³   ³   ³   ³           ³       DialogManager.class
+³   ³   ³   ³           ³       DrinkButtonFactory.class
+³   ³   ³   ³           ³       DrinkPopupMenu.class
+³   ³   ³   ³           ³       MainWindow.class
+³   ³   ³   ³           ³       
+³   ³   ³   ³           ÀÄÄÄutil
+³   ³   ³   ³                   Constants.class
+³   ³   ³   ³                   DrinkIcon.class
+³   ³   ³   ³                   IconLoader.class
+³   ³   ³   ³                   Validator.class
+³   ³   ³   ³                   
+³   ³   ³   ÀÄÄÄimg
+³   ³   ³           app_icon.ico
+³   ³   ³           app_icon.png
+³   ³   ³           beer_1.png
+³   ³   ³           cacao_1.png
+³   ³   ³           coffee_1.png
+³   ³   ³           coke_1.png
+³   ³   ³           energy_drink_1.png
+³   ³   ³           fruit_water_1.png
+³   ³   ³           fruit_water_2.png
+³   ³   ³           juice_1.png
+³   ³   ³           juice_2.png
+³   ³   ³           juice_3.png
+³   ³   ³           juice_4.png
+³   ³   ³           juice_5.png
+³   ³   ³           juice_6.png
+³   ³   ³           juice_7.png
+³   ³   ³           juice_8.png
+³   ³   ³           milk_1.png
+³   ³   ³           soda_1.png
+³   ³   ³           soda_2.png
+³   ³   ³           tea_1.png
+³   ³   ³           water_1.png
+³   ³   ³           
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄbuild
+³   ³   ÃÄÄÄclasses
+³   ³   ³   ÀÄÄÄjava
+³   ³   ³       ÃÄÄÄmain
+³   ³   ³       ³   ÀÄÄÄde
+³   ³   ³       ³       ÀÄÄÄtjark
+³   ³   ³       ³           ÀÄÄÄwaterlog
+³   ³   ³       ³               ³   App.class
+³   ³   ³       ³               ³   
+³   ³   ³       ³               ÃÄÄÄlayout
+³   ³   ³       ³               ³       WrapLayout.class
+³   ³   ³       ³               ³       
+³   ³   ³       ³               ÃÄÄÄmodel
+³   ³   ³       ³               ³       DrinkOption.class
+³   ³   ³       ³               ³       
+³   ³   ³       ³               ÃÄÄÄservice
+³   ³   ³       ³               ³       DrinkManager.class
+³   ³   ³       ³               ³       SaveManager.class
+³   ³   ³       ³               ³       WaterCalculator.class
+³   ³   ³       ³               ³       
+³   ³   ³       ³               ÃÄÄÄui
+³   ³   ³       ³               ³       CreateDrinkOptionDialog.class
+³   ³   ³       ³               ³       DialogManager.class
+³   ³   ³       ³               ³       DrinkButtonFactory.class
+³   ³   ³       ³               ³       DrinkPopupMenu.class
+³   ³   ³       ³               ³       MainWindow.class
+³   ³   ³       ³               ³       
+³   ³   ³       ³               ÀÄÄÄutil
+³   ³   ³       ³                       Constants.class
+³   ³   ³       ³                       DrinkIcon.class
+³   ³   ³       ³                       IconLoader.class
+³   ³   ³       ³                       Validator.class
+³   ³   ³       ³                       
+³   ³   ³       ÀÄÄÄtest
+³   ³   ÃÄÄÄdistributions
+³   ³   ³       app.tar
+³   ³   ³       app.zip
+³   ³   ³       
+³   ³   ÃÄÄÄgenerated
+³   ³   ³   ÀÄÄÄsources
+³   ³   ³       ÃÄÄÄannotationProcessor
+³   ³   ³       ³   ÀÄÄÄjava
+³   ³   ³       ³       ÀÄÄÄmain
+³   ³   ³       ÀÄÄÄheaders
+³   ³   ³           ÀÄÄÄjava
+³   ³   ³               ÀÄÄÄmain
+³   ³   ÃÄÄÄinstall
+³   ³   ³   ÀÄÄÄapp
+³   ³   ³       ÃÄÄÄbin
+³   ³   ³       ³       app
+³   ³   ³       ³       app.bat
+³   ³   ³       ³       
+³   ³   ³       ÀÄÄÄlib
+³   ³   ³               app.jar
+³   ³   ³               
+³   ³   ÃÄÄÄlibs
+³   ³   ³       app.jar
+³   ³   ³       
+³   ³   ÃÄÄÄresources
+³   ³   ³   ÃÄÄÄmain
+³   ³   ³   ³   ÀÄÄÄimg
+³   ³   ³   ³           app_icon.png
+³   ³   ³   ³           beer_1.png
+³   ³   ³   ³           cacao_1.png
+³   ³   ³   ³           coffee_1.png
+³   ³   ³   ³           coke_1.png
+³   ³   ³   ³           energy_drink_1.png
+³   ³   ³   ³           fruit_water_1.png
+³   ³   ³   ³           fruit_water_2.png
+³   ³   ³   ³           juice_1.png
+³   ³   ³   ³           juice_2.png
+³   ³   ³   ³           juice_3.png
+³   ³   ³   ³           juice_4.png
+³   ³   ³   ³           juice_5.png
+³   ³   ³   ³           juice_6.png
+³   ³   ³   ³           juice_7.png
+³   ³   ³   ³           juice_8.png
+³   ³   ³   ³           milk_1.png
+³   ³   ³   ³           soda_1.png
+³   ³   ³   ³           soda_2.png
+³   ³   ³   ³           tea_1.png
+³   ³   ³   ³           water_1.png
+³   ³   ³   ³           
+³   ³   ³   ÀÄÄÄtest
+³   ³   ÃÄÄÄscripts
+³   ³   ³       app
+³   ³   ³       app.bat
+³   ³   ³       
+³   ³   ÀÄÄÄtmp
+³   ³       ÃÄÄÄcompileJava
+³   ³       ³       previous-compilation-data.bin
+³   ³       ³       
+³   ³       ÀÄÄÄjar
+³   ³               MANIFEST.MF
+³   ³               
+³   ÀÄÄÄsrc
+³       ÃÄÄÄmain
+³       ³   ÃÄÄÄjava
+³       ³   ³   ÀÄÄÄde
+³       ³   ³       ÀÄÄÄtjark
+³       ³   ³           ÀÄÄÄwaterlog
+³       ³   ³               ³   App.java
+³       ³   ³               ³   
+³       ³   ³               ÃÄÄÄlayout
+³       ³   ³               ³       WrapLayout.java
+³       ³   ³               ³       
+³       ³   ³               ÃÄÄÄmodel
+³       ³   ³               ³       DrinkOption.java
+³       ³   ³               ³       
+³       ³   ³               ÃÄÄÄservice
+³       ³   ³               ³       DrinkManager.java
+³       ³   ³               ³       SaveManager.java
+³       ³   ³               ³       WaterCalculator.java
+³       ³   ³               ³       
+³       ³   ³               ÃÄÄÄui
+³       ³   ³               ³       CreateDrinkOptionDialog.java
+³       ³   ³               ³       DialogManager.java
+³       ³   ³               ³       DrinkButtonFactory.java
+³       ³   ³               ³       DrinkPopupMenu.java
+³       ³   ³               ³       MainWindow.java
+³       ³   ³               ³       
+³       ³   ³               ÀÄÄÄutil
+³       ³   ³                       Constants.java
+³       ³   ³                       DrinkIcon.java
+³       ³   ³                       IconLoader.java
+³       ³   ³                       Validator.java
+³       ³   ³                       
+³       ³   ÀÄÄÄresources
+³       ³       ÀÄÄÄimg
+³       ³               app_icon.png
+³       ³               beer_1.png
+³       ³               cacao_1.png
+³       ³               coffee_1.png
+³       ³               coke_1.png
+³       ³               energy_drink_1.png
+³       ³               fruit_water_1.png
+³       ³               fruit_water_2.png
+³       ³               juice_1.png
+³       ³               juice_2.png
+³       ³               juice_3.png
+³       ³               juice_4.png
+³       ³               juice_5.png
+³       ³               juice_6.png
+³       ³               juice_7.png
+³       ³               juice_8.png
+³       ³               milk_1.png
+³       ³               soda_1.png
+³       ³               soda_2.png
+³       ³               tea_1.png
+³       ³               water_1.png
+³       ³               
+³       ÀÄÄÄtest
+³           ÃÄÄÄjava
+³           ÀÄÄÄresources
+ÃÄÄÄbuild
+³   ÀÄÄÄreports
+³       ÃÄÄÄconfiguration-cache
+³       ³   ÃÄÄÄ6biur1eff3yx3vxja3002pbpo
+³       ³   ³   ÀÄÄÄcghln0bnocqoz65vkdse52xfp
+³       ³   ³           configuration-cache-report.html
+³       ³   ³           
+³       ³   ÃÄÄÄ6zfgphrcistvppir42robml13
+³       ³   ³   ÀÄÄÄ3uvbr20iq70m49h6csst1d9zg
+³       ³   ³           configuration-cache-report.html
+³       ³   ³           
+³       ³   ÃÄÄÄ7lsxewf7b7q64ulyplxsady37
+³       ³   ³   ÀÄÄÄ10sgy87b8z2ig2gycfe73m8uy
+³       ³   ³           configuration-cache-report.html
+³       ³   ³           
+³       ³   ÃÄÄÄas6tcavzctl47t04ua140ixma
+³       ³   ³   ÀÄÄÄam1cfj1wcqkzuhj3m9fxactv
+³       ³   ³           configuration-cache-report.html
+³       ³   ³           
+³       ³   ÃÄÄÄcnhl2wpzxblejkod27rxqt5a5
+³       ³   ³   ÃÄÄÄ2l3jwfo5v0pgikwkc6penuijv
+³       ³   ³   ³       configuration-cache-report.html
+³       ³   ³   ³       
+³       ³   ³   ÀÄÄÄcwg4616m15sdmn7bw0zvq0vjg
+³       ³   ³           configuration-cache-report.html
+³       ³   ³           
+³       ³   ÃÄÄÄdvxgvamnmw5vdfwlkjo5mn3qy
+³       ³   ³   ÀÄÄÄ4o43redcygi6amm33sl7ww6oq
+³       ³   ³           configuration-cache-report.html
+³       ³   ³           
+³       ³   ÀÄÄÄho16wz5i1083cxkvtzo5273z
+³       ³       ÀÄÄÄagd9qvxr319vh7nowhlolucl9
+³       ³               configuration-cache-report.html
+³       ³               
+³       ÀÄÄÄproblems
+³               problems-report.html
+³               
+ÃÄÄÄgradle
+³   ³   libs.versions.toml
+³   ³   
+³   ÀÄÄÄwrapper
+³           gradle-wrapper.jar
+³           gradle-wrapper.properties
+³           
+ÃÄÄÄjpackage
+³       icon.icns
+³       icon.ico
+³       icon.png
+³       
+ÃÄÄÄrelease
+³   ³   Water Log.rar
+³   ³   
+³   ÀÄÄÄWater Log
+³       ³   Water Log.exe
+³       ³   
+³       ÃÄÄÄapp
+³       ³       .jpackage.xml
+³       ³       app.jar
+³       ³       Water Log.cfg
+³       ³       
+³       ÀÄÄÄruntime
+³           ³   release
+³           ³   
+³           ÃÄÄÄbin
+³           ³   ³   api-ms-win-core-console-l1-1-0.dll
+³           ³   ³   api-ms-win-core-console-l1-2-0.dll
+³           ³   ³   api-ms-win-core-datetime-l1-1-0.dll
+³           ³   ³   api-ms-win-core-debug-l1-1-0.dll
+³           ³   ³   api-ms-win-core-errorhandling-l1-1-0.dll
+³           ³   ³   api-ms-win-core-fibers-l1-1-0.dll
+³           ³   ³   api-ms-win-core-file-l1-1-0.dll
+³           ³   ³   api-ms-win-core-file-l1-2-0.dll
+³           ³   ³   api-ms-win-core-file-l2-1-0.dll
+³           ³   ³   api-ms-win-core-handle-l1-1-0.dll
+³           ³   ³   api-ms-win-core-heap-l1-1-0.dll
+³           ³   ³   api-ms-win-core-interlocked-l1-1-0.dll
+³           ³   ³   api-ms-win-core-libraryloader-l1-1-0.dll
+³           ³   ³   api-ms-win-core-localization-l1-2-0.dll
+³           ³   ³   api-ms-win-core-memory-l1-1-0.dll
+³           ³   ³   api-ms-win-core-namedpipe-l1-1-0.dll
+³           ³   ³   api-ms-win-core-processenvironment-l1-1-0.dll
+³           ³   ³   api-ms-win-core-processthreads-l1-1-0.dll
+³           ³   ³   api-ms-win-core-processthreads-l1-1-1.dll
+³           ³   ³   api-ms-win-core-profile-l1-1-0.dll
+³           ³   ³   api-ms-win-core-rtlsupport-l1-1-0.dll
+³           ³   ³   api-ms-win-core-string-l1-1-0.dll
+³           ³   ³   api-ms-win-core-synch-l1-1-0.dll
+³           ³   ³   api-ms-win-core-synch-l1-2-0.dll
+³           ³   ³   api-ms-win-core-sysinfo-l1-1-0.dll
+³           ³   ³   api-ms-win-core-timezone-l1-1-0.dll
+³           ³   ³   api-ms-win-core-util-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-conio-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-convert-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-environment-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-filesystem-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-heap-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-locale-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-math-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-multibyte-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-private-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-process-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-runtime-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-stdio-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-string-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-time-l1-1-0.dll
+³           ³   ³   api-ms-win-crt-utility-l1-1-0.dll
+³           ³   ³   attach.dll
+³           ³   ³   awt.dll
+³           ³   ³   dt_shmem.dll
+³           ³   ³   dt_socket.dll
+³           ³   ³   extnet.dll
+³           ³   ³   fontmanager.dll
+³           ³   ³   freetype.dll
+³           ³   ³   instrument.dll
+³           ³   ³   j2gss.dll
+³           ³   ³   j2pcsc.dll
+³           ³   ³   j2pkcs11.dll
+³           ³   ³   jaas.dll
+³           ³   ³   java.dll
+³           ³   ³   javaaccessbridge.dll
+³           ³   ³   javajpeg.dll
+³           ³   ³   jawt.dll
+³           ³   ³   jdwp.dll
+³           ³   ³   jimage.dll
+³           ³   ³   jli.dll
+³           ³   ³   jpackage.dll
+³           ³   ³   jsound.dll
+³           ³   ³   jsvml.dll
+³           ³   ³   lcms.dll
+³           ³   ³   management.dll
+³           ³   ³   management_agent.dll
+³           ³   ³   management_ext.dll
+³           ³   ³   mlib_image.dll
+³           ³   ³   msvcp140.dll
+³           ³   ³   net.dll
+³           ³   ³   nio.dll
+³           ³   ³   prefs.dll
+³           ³   ³   rmi.dll
+³           ³   ³   splashscreen.dll
+³           ³   ³   sspi_bridge.dll
+³           ³   ³   sunmscapi.dll
+³           ³   ³   syslookup.dll
+³           ³   ³   ucrtbase.dll
+³           ³   ³   vcruntime140.dll
+³           ³   ³   vcruntime140_1.dll
+³           ³   ³   verify.dll
+³           ³   ³   w2k_lsa_auth.dll
+³           ³   ³   windowsaccessbridge-64.dll
+³           ³   ³   zip.dll
+³           ³   ³   
+³           ³   ÀÄÄÄserver
+³           ³           jvm.dll
+³           ³           
+³           ÃÄÄÄconf
+³           ³   ³   jaxp-strict.properties.template
+³           ³   ³   jaxp.properties
+³           ³   ³   logging.properties
+³           ³   ³   net.properties
+³           ³   ³   sound.properties
+³           ³   ³   
+³           ³   ÃÄÄÄmanagement
+³           ³   ³       jmxremote.access
+³           ³   ³       jmxremote.password.template
+³           ³   ³       management.properties
+³           ³   ³       
+³           ³   ÀÄÄÄsecurity
+³           ³       ³   java.policy
+³           ³       ³   java.security
+³           ³       ³   
+³           ³       ÀÄÄÄpolicy
+³           ³           ³   README.txt
+³           ³           ³   
+³           ³           ÃÄÄÄlimited
+³           ³           ³       default_local.policy
+³           ³           ³       default_US_export.policy
+³           ³           ³       exempt_local.policy
+³           ³           ³       
+³           ³           ÀÄÄÄunlimited
+³           ³                   default_local.policy
+³           ³                   default_US_export.policy
+³           ³                   
+³           ÃÄÄÄlegal
+³           ³   ÃÄÄÄjava.base
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       aes.md
+³           ³   ³       asm.md
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       c-libutl.md
+³           ³   ³       cldr.md
+³           ³   ³       icu.md
+³           ³   ³       LICENSE
+³           ³   ³       public_suffix.md
+³           ³   ³       siphash.md
+³           ³   ³       unicode.md
+³           ³   ³       wepoll.md
+³           ³   ³       zlib.md
+³           ³   ³       
+³           ³   ÃÄÄÄjava.compiler
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.datatransfer
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.desktop
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       colorimaging.md
+³           ³   ³       freetype.md
+³           ³   ³       giflib.md
+³           ³   ³       harfbuzz.md
+³           ³   ³       jpeg.md
+³           ³   ³       lcms.md
+³           ³   ³       libpng.md
+³           ³   ³       LICENSE
+³           ³   ³       mesa3d.md
+³           ³   ³       
+³           ³   ÃÄÄÄjava.instrument
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.logging
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.management
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.management.rmi
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.naming
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.net.http
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.prefs
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.rmi
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.scripting
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.security.jgss
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.security.sasl
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.smartcardio
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.sql
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.sql.rowset
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.transaction.xa
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjava.xml
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       bcel.md
+³           ³   ³       dom.md
+³           ³   ³       jcup.md
+³           ³   ³       LICENSE
+³           ³   ³       xalan.md
+³           ³   ³       xerces.md
+³           ³   ³       
+³           ³   ÃÄÄÄjava.xml.crypto
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       santuario.md
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.accessibility
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.attach
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.charsets
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.compiler
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.crypto.cryptoki
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       pkcs11cryptotoken.md
+³           ³   ³       pkcs11wrapper.md
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.crypto.mscapi
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.dynalink
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       dynalink.md
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.editpad
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.httpserver
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.incubator.vector
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.internal.ed
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.internal.jvmstat
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.internal.le
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       jline.md
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.internal.md
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       commonmark.md
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.internal.opt
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       jopt-simple.md
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jartool
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.javadoc
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       dejavufonts.md
+³           ³   ³       jquery.md
+³           ³   ³       jqueryUI.md
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jconsole
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jdeps
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jdi
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jdwp.agent
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jfr
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jlink
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jpackage
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jshell
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jsobject
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.jstatd
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.localedata
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       cldr.md
+³           ³   ³       LICENSE
+³           ³   ³       thaidict.md
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.management
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.management.agent
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.management.jfr
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.naming.dns
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.naming.rmi
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.net
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.nio.mapmode
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.sctp
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.security.auth
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.security.jgss
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.unsupported
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.unsupported.desktop
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÃÄÄÄjdk.xml.dom
+³           ³   ³       ADDITIONAL_LICENSE_INFO
+³           ³   ³       ASSEMBLY_EXCEPTION
+³           ³   ³       LICENSE
+³           ³   ³       
+³           ³   ÀÄÄÄjdk.zipfs
+³           ³           ADDITIONAL_LICENSE_INFO
+³           ³           ASSEMBLY_EXCEPTION
+³           ³           LICENSE
+³           ³           
+³           ÀÄÄÄlib
+³               ³   classlist
+³               ³   ct.sym
+³               ³   fontconfig.bfc
+³               ³   fontconfig.properties.src
+³               ³   jawt.lib
+³               ³   jrt-fs.jar
+³               ³   jvm.cfg
+³               ³   jvm.lib
+³               ³   modules
+³               ³   psfont.properties.ja
+³               ³   psfontj2d.properties
+³               ³   tzdb.dat
+³               ³   tzmappings
+³               ³   
+³               ÃÄÄÄjfr
+³               ³       default.jfc
+³               ³       profile.jfc
+³               ³       
+³               ÀÄÄÄsecurity
+³                       blocked.certs
+³                       cacerts
+³                       default.policy
+³                       public_suffix_list.dat
+³                       
+ÀÄÄÄscreenshots
+        main_window.png
+        

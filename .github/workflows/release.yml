@@ -8,59 +8,152 @@ on:
 permissions:
   contents: write
 
+env:
+  APP_NAME: Water Log
+  APP_MAIN_CLASS: de.tjark.waterlog.App
+  APP_VENDOR: Anders Digital Studio
+
 jobs:
+
   build:
+
     strategy:
       fail-fast: false
+
       matrix:
         include:
+
           - os: windows-latest
-            archive: zip
+            package: msi
+            icon: jpackage/icon.ico
+            extension: msi
 
           - os: ubuntu-latest
-            archive: tar
+            package: deb
+            icon: jpackage/icon.png
+            extension: deb
 
           - os: macos-latest
-            archive: tar
+            package: dmg
+            icon: jpackage/icon.icns
+            extension: dmg
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 23
-          cache: gradle
+      - uses: actions/checkout@v4
 
       - name: Make Gradle executable
         if: runner.os != 'Windows'
         run: chmod +x gradlew
 
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 23
+
       - name: Build application
+        shell: bash
         run: ./gradlew :app:installDist
 
-      - name: Package ZIP (Windows)
+      - name: Read Version
+        shell: bash
+        run: |
+          echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
+
+      # - name: Install WiX
+      #   if: runner.os == 'Windows'
+      #   run: choco install wixtoolset --yes
+
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fakeroot dpkg-dev
+
+      - name: Package Windows
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          Compress-Archive `
-            -Path app/build/install/app/* `
-            -DestinationPath WaterLog-Windows.zip
+          jpackage `
+            --type msi `
+            --name "${{ env.APP_NAME }}" `
+            --input app/build/install/app/lib `
+            --main-jar app.jar `
+            --main-class "${{ env.APP_MAIN_CLASS }}" `
+            --icon jpackage/icon.ico `
+            --vendor "${{ env.APP_VENDOR }}" `
+            --app-version $env:VERSION `
+            --dest release
 
-      - name: Package TAR (Linux/macOS)
-        if: runner.os != 'Windows'
+      - name: Rename Windows installer
+        if: runner.os == 'Windows'
+        shell: pwsh
         run: |
-          tar -czf WaterLog-${{ runner.os }}.tar.gz \
-          -C app/build/install app
+          Get-ChildItem release -Filter *.msi |
+          Rename-Item -NewName "WaterLog-$env:VERSION-Windows.msi"
 
-      - name: Upload Release Asset
-        uses: softprops/action-gh-release@v2
+
+      - name: Package Linux
+        if: runner.os == 'Linux'
+        run: |
+          jpackage \
+            --type deb \
+            --name "${APP_NAME}" \
+            --input app/build/install/app/lib \
+            --main-jar app.jar \
+            --main-class "${APP_MAIN_CLASS}" \
+            --icon jpackage/icon.png \
+            --vendor "${APP_VENDOR}" \
+            --app-version "${VERSION}" \
+            --dest release
+
+      - name: Rename Linux installer
+        if: runner.os == 'Linux'
+        run: |
+          mv release/*.deb release/WaterLog-${VERSION}-Linux.deb
+
+
+      - name: Package macOS
+        if: runner.os == 'macOS'
+        run: |
+          jpackage \
+            --type dmg \
+            --name "${APP_NAME}" \
+            --input app/build/install/app/lib \
+            --main-jar app.jar \
+            --main-class "${APP_MAIN_CLASS}" \
+            --icon jpackage/icon.icns \
+            --vendor "${APP_VENDOR}" \
+            --app-version "${VERSION}" \
+            --dest release
+
+      - name: Rename macOS installer
+        if: runner.os == 'macOS'
+        run: |
+          mv release/*.dmg release/WaterLog-${VERSION}-macOS.dmg
+
+
+      - name: Upload Installer
+        uses: actions/upload-artifact@v4
         with:
-          files: |
-            WaterLog-Windows.zip
-            WaterLog-Linux.tar.gz
-            WaterLog-macOS.tar.gz
+          name: ${{ runner.os }}
+          path: release/*
+
+  # release:
+
+  #   needs: build
+
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         path: artifacts
+
+  #     - name: Create GitHub Release
+  #       uses: softprops/action-gh-release@v2
+  #       with:
+  #         files: artifacts/**/*
