@@ -12,6 +12,7 @@ env:
   APP_NAME: Water Log
   APP_MAIN_CLASS: de.tjark.waterlog.App
   APP_VENDOR: Anders Digital Studio
+  APP_ID: de.tjark.waterlog
 
 jobs:
 
@@ -85,6 +86,10 @@ jobs:
             --icon jpackage/icon.ico `
             --vendor "${{ env.APP_VENDOR }}" `
             --app-version $env:VERSION `
+            --install-dir "Water Log" `
+            --win-dir-chooser `
+            --win-menu `
+            --win-shortcut `
             --dest release
 
       - name: Rename Windows installer
@@ -99,13 +104,16 @@ jobs:
         run: |
           jpackage \
             --type deb \
-            --name "${APP_NAME}" \
+            --name "water-log" \
             --input "app/build/install/Water Log/lib" \
             --main-jar app.jar \
             --main-class "${APP_MAIN_CLASS}" \
             --icon jpackage/icon.png \
             --vendor "${APP_VENDOR}" \
             --app-version "${VERSION}" \
+            --linux-package-name "water-log" \
+            --linux-shortcut \
+            --linux-menu-group "Utility" \
             --dest release
 
       - name: Rename Linux installer
@@ -125,6 +133,8 @@ jobs:
             --icon jpackage/icon.icns \
             --vendor "${APP_VENDOR}" \
             --app-version "${VERSION}" \
+            --mac-package-name "Water Log" \
+            --mac-package-identifier "de.tjark.waterlog" \
             --dest release
 
       - name: Rename macOS installer

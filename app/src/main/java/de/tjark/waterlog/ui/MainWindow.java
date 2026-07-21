@@ -39,13 +39,18 @@ public class MainWindow {
     public boolean drinkEntryEditMode = false;
 
     private int waterGoal = 3000;
-    private final String VERSION_TEXT = "v1.0.1";
+    private final String VERSION_TEXT = "v1.0.6";
 
     private JLabel waterLabel;
     private JProgressBar waterProgressBar;
 
     private ArrayList<JPanel> panelList = new ArrayList<>();
     private ArrayList<JLabel> labelList = new ArrayList<>();
+
+    private JButton drinkEntryRemoveButton = new JButton();
+    private JButton drinkEntryEditButton = new JButton();
+    private JButton drinkOptionRemoveButton = new JButton();
+    private JButton drinkOptionEditButton = new JButton();
 
     private DrinkManager drinkManager;
     private SaveManager saveManager;
@@ -159,33 +164,33 @@ public class MainWindow {
 
         // ------------------------------- Buttons -------------------------------------
 
-        JButton historyAddButton = DrinkButtonFactory.createHistoryButton("Schneller Eintrag");
-        historyAddButton.addActionListener(e -> {
+        JButton drinkEntryAddButton = DrinkButtonFactory.createHistoryButton("Schneller Eintrag");
+        drinkEntryAddButton.addActionListener(e -> {
             drinkEntryAddAction();
         });
 
-        JButton historyRemoveButton = DrinkButtonFactory.createHistoryButton("Löschen");
-        historyRemoveButton.addActionListener(e -> {
+        drinkEntryRemoveButton = DrinkButtonFactory.createHistoryButton("");
+        drinkEntryRemoveButton.addActionListener(e -> {
             drinkEntryRemoveAction();
         });
 
-        JButton historyEditButton = DrinkButtonFactory.createHistoryButton("Bearbeiten");
-        historyEditButton.addActionListener(e -> {
+        drinkEntryEditButton = DrinkButtonFactory.createHistoryButton("");
+        drinkEntryEditButton.addActionListener(e -> {
             drinkEntryEditAction();
         });
 
-        JButton selectionAddButton = DrinkButtonFactory.createSelectionButton("Hinzufügen");
-        selectionAddButton.addActionListener(e -> {
+        JButton drinkOptionAddButton = DrinkButtonFactory.createSelectionButton("Hinzufügen");
+        drinkOptionAddButton.addActionListener(e -> {
             drinkOptionAddAction();
         });
 
-        JButton selectionRemoveButton = DrinkButtonFactory.createSelectionButton("Löschen");
-        selectionRemoveButton.addActionListener(e -> {
+        drinkOptionRemoveButton = DrinkButtonFactory.createSelectionButton("");
+        drinkOptionRemoveButton.addActionListener(e -> {
             drinkOptionRemoveAction();
         });
 
-        JButton selectionEditButton = DrinkButtonFactory.createSelectionButton("Bearbeiten");
-        selectionEditButton.addActionListener(e -> {
+        drinkOptionEditButton = DrinkButtonFactory.createSelectionButton("");
+        drinkOptionEditButton.addActionListener(e -> {
             drinkOptionEditAction();
         });
 
@@ -201,6 +206,7 @@ public class MainWindow {
 
         buildDrinkOptionButtons(drinkOptionsScrollPanel);
         buildDrinkEntryButtons(drinkEntrysScrollPanel);
+        updateFunktionButtons();
 
         // ------------------------------- Scroll-Panes -------------------------------
 
@@ -239,17 +245,17 @@ public class MainWindow {
         drinkEntrysPanel.add(historyScrollPane, BorderLayout.CENTER);
         drinkEntrysPanel.add(drinkEntrysButtonPanel, BorderLayout.SOUTH);
 
-        drinkEntrysButtonPanel.add(historyEditButton);
-        drinkEntrysButtonPanel.add(historyAddButton);
-        drinkEntrysButtonPanel.add(historyRemoveButton);
+        drinkEntrysButtonPanel.add(drinkEntryEditButton);
+        drinkEntrysButtonPanel.add(drinkEntryAddButton);
+        drinkEntrysButtonPanel.add(drinkEntryRemoveButton);
 
         drinkOptionsPanel.add(drinkOptionsLabel, BorderLayout.NORTH);
         drinkOptionsPanel.add(drinkOptionsButtonPanel, BorderLayout.SOUTH);
         drinkOptionsPanel.add(selectionScrollPane, BorderLayout.CENTER);
 
-        drinkOptionsButtonPanel.add(selectionRemoveButton);
-        drinkOptionsButtonPanel.add(selectionAddButton);
-        drinkOptionsButtonPanel.add(selectionEditButton);
+        drinkOptionsButtonPanel.add(drinkOptionRemoveButton);
+        drinkOptionsButtonPanel.add(drinkOptionAddButton);
+        drinkOptionsButtonPanel.add(drinkOptionEditButton);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(Constants.WIN_WIDTH, Constants.WIN_HEIGHT);
@@ -295,6 +301,7 @@ public class MainWindow {
             return;
         drinkEntryEditMode = false;
         drinkEntryDelMode = !drinkEntryDelMode;
+        updateFunktionButtons();
         updateEntryButtons();
     }
 
@@ -303,6 +310,7 @@ public class MainWindow {
             return;
         drinkEntryDelMode = false;
         drinkEntryEditMode = !drinkEntryEditMode;
+        updateFunktionButtons();
         updateEntryButtons();
     }
 
@@ -317,6 +325,7 @@ public class MainWindow {
             return;
         drinkOptionEditMode = false;
         drinkOptionDelMode = !drinkOptionDelMode;
+        updateFunktionButtons();
         updateOptionButtons();
     }
 
@@ -325,10 +334,44 @@ public class MainWindow {
             return;
         drinkOptionDelMode = false;
         drinkOptionEditMode = !drinkOptionEditMode;
+        updateFunktionButtons();
         updateOptionButtons();
     }
 
     // ------------------------------- Helper-Funktions ---------------------------
+    private void updateFunktionButtons() {
+
+        String delTextOn = "Löschen / An";
+        String delTextOff = "Löschen / Aus";
+
+        String editTextOn = "Bearbeiten / An";
+        String editTextOff = "Bearbeiten / Aus";
+
+        if (drinkEntryDelMode) {
+            drinkEntryRemoveButton.setText(delTextOn);
+        } else {
+            drinkEntryRemoveButton.setText(delTextOff);
+        }
+
+        if (drinkEntryEditMode) {
+            drinkEntryEditButton.setText(editTextOn);
+        } else {
+            drinkEntryEditButton.setText(editTextOff);
+        }
+
+        if (drinkOptionDelMode) {
+            drinkOptionRemoveButton.setText(delTextOn);
+        } else {
+            drinkOptionRemoveButton.setText(delTextOff);
+        }
+
+        if (drinkOptionEditMode) {
+            drinkOptionEditButton.setText(editTextOn);
+        } else {
+            drinkOptionEditButton.setText(editTextOff);
+        }
+
+    }
 
     public void buildDrinkOptionButtons(JPanel drinkOptionsScrollPanel) {
         drinkOptionsScrollPanel.removeAll();
